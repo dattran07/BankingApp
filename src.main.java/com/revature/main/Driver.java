@@ -8,7 +8,6 @@ import com.revature.utility.Handler;
 public class Driver {
 
 	private static Driver d;
-	private static Logger log = Logger.getRootLogger();
 	private Handler handler;
 	private ConsoleScript cs;
 
@@ -28,7 +27,6 @@ public class Driver {
 	}
 
 	public static void main(String[] args) {
-		log.info("Revature Bank is online!");
 		@SuppressWarnings("unused")
 		Driver bank = Driver.getInstance();
 	}

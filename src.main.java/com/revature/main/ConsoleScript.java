@@ -9,6 +9,7 @@ import org.apache.log4j.Logger;
 import com.revature.menus.BalanceMenu;
 import com.revature.menus.DepositMenu;
 import com.revature.menus.LoginMenu;
+import com.revature.menus.LogoutMenu;
 import com.revature.menus.ServicesMenu;
 import com.revature.menus.StartMenu;
 import com.revature.menus.WithdrawalMenu;
@@ -34,6 +35,8 @@ public class ConsoleScript {
 	private static WithdrawalMenu startWM = new WithdrawalMenu();
 	@SuppressWarnings("unused")
 	private static BalanceMenu startSB = new BalanceMenu();
+	@SuppressWarnings("unused")
+	private static LogoutMenu startLO = new LogoutMenu();
 
 	public ConsoleScript(Handler handler) {
 		this.handler = handler;
@@ -141,7 +144,7 @@ public class ConsoleScript {
 			}
 
 			else if (input.equals("3")) {
-				log.info("Thank you for using our application");
+				LogoutMenu.showLogoutMessage();
 				exit = true;
 				break;
 
@@ -164,8 +167,9 @@ public class ConsoleScript {
 
 			// Action: Logout
 			if (input.equals("4")) {
-				isLoggedIn = false;
-				log.info("Thank you for using our application.\n");
+				clearScreen();
+				LogoutMenu.showLogoutMessage();;
+				System.exit(0);
 
 				// Action: Deposit
 			} else if (input.equals("1")) {
