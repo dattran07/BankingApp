@@ -5,7 +5,9 @@ import org.apache.log4j.Logger;
 public class StartMenu {
 	private static Logger log = Logger.getRootLogger();
 
+	
 	public void showMenu() {
+		log.info(" ");
 		log.info("      *******************************************");
 		log.info("      *              Revature BANK              *");
 		log.info("      *                                         *");
